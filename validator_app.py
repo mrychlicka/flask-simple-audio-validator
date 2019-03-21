@@ -1,6 +1,6 @@
 import os
 
-import validation
+import helper
 from flask import Flask, render_template, flash, request, redirect
 from werkzeug.utils import secure_filename
 
@@ -24,9 +24,9 @@ def upload_site():
 
         file = request.files['file']
         if file.filename == '':
-            return render_template('no_file.html')
+            return render_template('no_file_added_site.html')
         if file and is_file_allowed(file.filename):
-            sth = validation.valid_audio("%s/%s" % (UPLOAD_FOLDER, file.filename))
+            sth = helper.valid_audio("%s/%s" % (UPLOAD_FOLDER, file.filename))
             filename = secure_filename(file.filename)
             file.save(os.path.join(validator_app.config['UPLOAD_FOLDER'], filename))
             sth_return = sth.split(" ")
