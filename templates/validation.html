@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Online Audio Files Validator</title>
+    <style>
+        #site_title{
+            font-family: 'Verdana', sans-serif;
+        }
+
+        table.table {
+            font-family: 'Poppins', sans-serif;;
+            font-weight: bold;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron p-3 mb-2 bg-info text-white">
+        <h1 id="site_title"> Online Audio Files Validator </h1>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="row">File name</th>
+            <td><b>{{filename}}</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Is valid</th>
+            <td><b>{{is_valid}}</b></td>
+        </tr>
+        <tr>
+            <th scope="row">Number of first silence gap sample</th>
+            <td>
+                {% if sample_number != ' ' %}
+                <b>{{sample_number}}</b>
+                {% else %}
+                No sample number
+                {% endif %}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
