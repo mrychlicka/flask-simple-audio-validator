@@ -10,10 +10,6 @@ Table with information: file name, valid/invalid and number of first sample of s
 
 To install required packages run: pip3 install -r requirements.txt
 
-=== Run ===
-
-Run program by typing in terminal: python3 -m main [file_name.wav] where 'file_name' is name of recording
-
 === Steps ===
 
 1. Upload audio file
