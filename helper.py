@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import wave
-import soundfile as sf
+from soundfile import SoundFile
 from pandas import DataFrame
 
 
@@ -24,7 +24,7 @@ def get_audio_total_sample(audio_file):
     :param audio_file: String - path to audio file (.wav)
     :return: Return total sample amount in audio file
     """
-    f = sf.SoundFile(audio_file)
+    f = SoundFile(audio_file)
     return len(f)
 
 
@@ -34,7 +34,7 @@ def get_audio_sample_rate(audio_file):
     :param audio_file: String - path to audio file (.wav)
     :return: Return sample rate
     """
-    f = sf.SoundFile(audio_file)
+    f = SoundFile(audio_file)
     return f.samplerate
 
 
